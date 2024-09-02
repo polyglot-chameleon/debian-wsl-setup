@@ -12,7 +12,7 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 echo "export PATH=\"$PATH:/opt/nvim-linux64/bin\"" >> ~/.bashrc
 
 ### Ruby Dev
-git clone https://github.com/rbenv/rbenv.git
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 ~/.rbenv/bin/rbenv init
 
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
