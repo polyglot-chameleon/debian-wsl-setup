@@ -1,7 +1,7 @@
 
 sudo apt update
 
-sudo apt install git curl build-essential libz-dev libffi-dev
+sudo apt install -y git curl build-essential libz-dev libffi-dev libssl-dev libreadline-dev libyaml-dev wget
 
 
 ### Neovim
