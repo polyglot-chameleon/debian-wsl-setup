@@ -6,6 +6,17 @@ sudo apt update
 sudo apt install -y git curl ca-certificates build-essential libz-dev libffi-dev libssl-dev libreadline-dev libyaml-dev wget
 sudo install -m 0755 -d /etc/apt/keyrings
 
+### Git
+git config --global user.name "$USERNAME"
+git config --global user.email $USERMAIL
+
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -q -N "$SSHPWD"
+
+git config --global commit.gpgsign true
+git config --global gpg.format ssh
+git config --global user.signingkey $(echo ~/.ssh/id_ed25519.pub)
+
+
 ### Neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
@@ -19,6 +30,7 @@ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 ~/.rbenv/bin/rbenv init
 
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
 
 ### Docker
 sudo sh -c "printf \"[boot]\nsystemd=true\n\" > /etc/wsl.conf"
@@ -38,6 +50,6 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-### restart WSL ###
+# restart
 
 exec $SHELL
