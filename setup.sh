@@ -10,7 +10,7 @@ sudo install -m 0755 -d /etc/apt/keyrings
 git config --global user.name "$USERNAME"
 git config --global user.email $USERMAIL
 
-ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -q -N "$SSHPWD"
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -q -N "$SSHPWD" -C $USERMAIL
 
 git config --global commit.gpgsign true
 git config --global gpg.format ssh
