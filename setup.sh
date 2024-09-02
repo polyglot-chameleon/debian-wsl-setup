@@ -15,4 +15,6 @@ echo "export PATH=\"$PATH:/opt/nvim-linux64/bin\"" >> ~/.bashrc
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 ~/.rbenv/bin/rbenv init
 
+exec $SHELL
+
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
