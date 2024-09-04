@@ -20,6 +20,9 @@ sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 
+### NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
 ### Ruby Dev
 rm -rf ~/.rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
