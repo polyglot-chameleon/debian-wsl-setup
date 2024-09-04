@@ -55,21 +55,25 @@ echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 
 ### NVM
+zsh <<<EOF
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+EOF
 
 ### Python3
 sudo apt install -y python3 python3-pip
 
 
-zsh <<EOF
 ### Ruby Dev
 echo "Downloading Ruby Dev env"
 rm -rf ~/.rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+zsh<<<EOF
 ~/.rbenv/bin/rbenv init
+EOF
 
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-EOF
+
 
 ### Docker
 sudo sh -c "printf \"[boot]\nsystemd=true\n\" > /etc/wsl.conf"
