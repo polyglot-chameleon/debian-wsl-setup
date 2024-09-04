@@ -23,6 +23,9 @@ echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 ### NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
+### Python3
+sudo apt install -y python3 python3-pip
+
 ### Ruby Dev
 rm -rf ~/.rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
