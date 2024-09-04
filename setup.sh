@@ -46,6 +46,21 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 echo "export PATH=\"\$PATH:/opt/nvim-linux64/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/opt/nvim-linux64/bin\"" >> ~/.zshrc
 
+
+### Go
+sudo rm -rf /usr/local/go
+curl -LO https:/go.dev/dl/go1.23.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
+echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.bashrc
+echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
+
+### NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+### Python3
+sudo apt install -y python3 python3-pip
+
+
 zsh <<EOF
 ### Ruby Dev
 echo "Downloading Ruby Dev env"
