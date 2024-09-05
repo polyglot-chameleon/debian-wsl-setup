@@ -1,9 +1,10 @@
+
 #!/bin/bash
 
 sudo apt update
 
 ### Deps
-sudo apt install -y git curl ca-certificates build-essential libz-dev libffi-dev libssl-dev libreadline-dev libyaml-dev wget
+sudo apt install -y git curl ca-certificates build-essential libz-dev libffi-dev libssl-dev libreadline-dev libyaml-dev wget zip unzip
 sudo install -m 0755 -d /etc/apt/keyrings
 
 ### Git
@@ -46,6 +47,17 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 echo "export PATH=\"\$PATH:/opt/nvim-linux64/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/opt/nvim-linux64/bin\"" >> ~/.zshrc
 
+### Java
+zsh << EOF
+curl https://get.sdkman.io | bash
+EOF
+
+echo "source \"$HOME/.sdkman/bin/sdkman-init.sh\"" >> ~/.bashrc
+echo "source \"$HOME/.sdkman/bin/sdkman-init.sh\"" >> ~/.zprofile
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+sdk install java
 
 ### Go
 sudo rm -rf /usr/local/go
@@ -55,7 +67,7 @@ echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 
 ### NVM
-zsh <<<EOF
+zsh << EOF
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 EOF
 
@@ -68,7 +80,7 @@ echo "Downloading Ruby Dev env"
 rm -rf ~/.rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
-zsh<<<EOF
+zsh << EOF
 ~/.rbenv/bin/rbenv init
 EOF
 
