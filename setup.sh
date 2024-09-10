@@ -68,9 +68,9 @@ sudo tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.bashrc
 echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 
-### NVM
+### Bun
 zsh << EOF
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+curl -fsSL https://bun.sh/install | bash
 EOF
 
 ### Python3
