@@ -73,6 +73,9 @@ zsh << EOF
 curl -fsSL https://bun.sh/install | bash
 EOF
 
+cat .bashrc | grep BUN_INSTALL >> .zprofile
+
+
 ### Python3
 sudo apt install -y python3 python3-pip
 
