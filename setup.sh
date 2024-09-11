@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 sudo apt update
@@ -60,6 +59,10 @@ echo "source \"$HOME/.sdkman/bin/sdkman-init.sh\"" >> ~/.zprofile
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 sdk install java
+
+### SSL self-signed cert for tomcat
+yes | keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -storepass $KEYSTORE_PWD -validity 360 -keysize 4096 # writes ~/.keystore
+
 
 ### Go
 sudo rm -rf /usr/local/go
