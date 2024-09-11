@@ -61,6 +61,10 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 sdk install java
 
+### SSL self-signed cert for tomcat
+keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -storepass $KEYSTORE_PWD -validity 360 -keysize 4096 # writes ~/.keystore
+
+
 ### Go
 sudo rm -rf /usr/local/go
 curl -LO https:/go.dev/dl/go1.23.0.linux-amd64.tar.gz
