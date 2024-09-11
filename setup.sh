@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 sudo apt update
@@ -62,7 +61,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install java
 
 ### SSL self-signed cert for tomcat
-keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -storepass $KEYSTORE_PWD -validity 360 -keysize 4096 -noprompt # writes ~/.keystore
+yes | keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -storepass $KEYSTORE_PWD -validity 360 -keysize 4096 # writes ~/.keystore
 
 
 ### Go
