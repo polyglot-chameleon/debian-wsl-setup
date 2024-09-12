@@ -74,6 +74,7 @@ echo "export PATH=\"\$PATH:/usr/local/go/bin\"" >> ~/.zprofile
 ### Bun
 zsh << EOF
 curl -fsSL https://bun.sh/install | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 EOF
 
 cat .bashrc | grep BUN_INSTALL >> .zprofile
