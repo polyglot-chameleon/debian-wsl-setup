@@ -8,6 +8,8 @@ sudo install -m 0755 -d /etc/apt/keyrings
 
 ### Git
 git config --global init.defaultBranch main
+git config --global push.autoSetupRemote true
+
 
 git config --global user.name "$USERNAME"
 git config --global user.email $USERMAIL
